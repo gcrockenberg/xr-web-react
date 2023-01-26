@@ -56,19 +56,18 @@ jobs:
 #    - name: Stage documentation artifacts
 #      run: ./packages/modelviewer.dev/scripts/ci-before-deploy.sh
 
-#    - name: Deploy to Github Pages
-#      uses: peaceiris/actions-gh-pages@v3
-#      with:
-#        github_token: ${{ secrets.GITHUB_TOKEN }}
-#        publish_branch: gh-pages
-#        force_orphan: true
-#        publish_dir: ./build
-
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v1
+    - name: Deploy to Github Pages
+      uses: peaceiris/actions-gh-pages@v3
       with:
-        path: './build'
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        force_orphan: true
+        publish_dir: ./build
+
+#    - name: Upload artifact
+#      uses: actions/upload-pages-artifact@v1
+#      with:
+#        path: './build'
     
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v1
+#    - name: Deploy to GitHub Pages
+#      id: deployment
+#      uses: actions/deploy-pages@v1
